@@ -15,6 +15,10 @@ WeaponManager::~WeaponManager(){
 	delete timer;
 }
 
+BasicObject* WeaponManager::GetWeaponAt(int index){
+	return vec_Weapon->at(index);
+}
+
 int WeaponManager::GetCount(){
 	return vec_Weapon->size();
 }

@@ -2,13 +2,18 @@
 #include "LaserBeam.h"
 #include "WeaponManager.h"
 #include "Physic.h"
+#include <typeinfo>
 
+#pragma once
 class Player : public BasicObject{
 public:
 	Player(SDL_Renderer* renderer);
 	~Player();
 
 	void SetLaserTexture(Texture* laserTex);
+	BasicObject* GetWeaponAtIndex(int index);
+	int GetWeaponCount();
+	int GetDamage();
 
 	void Update() override;
 	void Draw() override;
@@ -25,6 +30,8 @@ private:
 	bool isShoot = false;
 
 	const int SPEED = 10;
+	const int LASER_DAMAGE = 20;
 	int fireRate = 2;
+	int damage = 0;
 };
 

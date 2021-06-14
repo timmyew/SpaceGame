@@ -11,6 +11,7 @@ public:
 	WeaponManager();
 	~WeaponManager();
 
+	BasicObject* GetWeaponAt(int index);
 	int GetCount();
 
 	void AddWeapon(BasicObject* obj);

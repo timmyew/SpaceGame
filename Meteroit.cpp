@@ -27,7 +27,6 @@ void Meteroit::Update(){
 	liveRec.w = ((live * 100) / GetRect()->w);
 
 	isFirstUpdate = false;
-	DecLive(1);
 }
 
 void Meteroit::Draw(){

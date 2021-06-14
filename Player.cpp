@@ -21,6 +21,27 @@ void Player::SetLaserTexture(Texture* laserTex){
 	this->laserTex = laserTex;
 }
 
+BasicObject* Player::GetWeaponAtIndex(int index){
+	BasicObject* obj = manager->GetWeaponAt(index);
+
+	const char* a = typeid(obj).name();
+	const char* b = typeid(LaserBeam).name();
+
+	if (typeid(obj).name() == typeid(LaserBeam).name()) {
+		damage = LASER_DAMAGE;
+	}
+
+	return manager->GetWeaponAt(index);
+}
+
+int Player::GetWeaponCount(){
+	return manager->GetCount();
+}
+
+int Player::GetDamage(){
+	return damage;
+}
+
 void Player::Update(){
 	BasicObject::Update();
 

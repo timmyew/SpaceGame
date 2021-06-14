@@ -13,6 +13,8 @@ public:
 	~MeteorGenerator();
 
 	void SetSpawnRate(int meteorPerSecond);
+	Meteroit* GetMeteroitAt(int index);
+	int GetMeteroitCount();
 
 	void Update();
 	void Draw();

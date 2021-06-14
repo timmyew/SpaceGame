@@ -22,6 +22,14 @@ void MeteorGenerator::SetSpawnRate(int meteorPerSecond){
 	spawnRate = meteorPerSecond;
 }
 
+Meteroit* MeteorGenerator::GetMeteroitAt(int index){
+	return vec_Meteors->at(index);
+}
+
+int MeteorGenerator::GetMeteroitCount(){
+	return vec_Meteors->size();
+}
+
 void MeteorGenerator::Update(){
 	CreateMeteors();
 

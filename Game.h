@@ -45,4 +45,5 @@ private:
 	Fps* fps;
 
 	void UpdateBackground();
+	void CheckMeteoritAndWeaponCollision();
 };

@@ -105,6 +105,8 @@ void Game::update(){
 
 	spaceShip->Update();
 	meteorGen->Update();
+
+	CheckMeteoritAndWeaponCollision();
 }
 
 void Game::render(){
@@ -137,5 +139,15 @@ void Game::UpdateBackground(){
 
 	if (backgroundRec2->x <= (-1 * WINDOW_WIDTH)) {
 		backgroundRec2->x = WINDOW_WIDTH;
+	}
+}
+
+void Game::CheckMeteoritAndWeaponCollision(){
+	for (int i = 0; i < spaceShip->GetWeaponCount(); i++){
+		for (int j = 0; j < meteorGen->GetMeteroitCount(); j++){
+			if (Physic::isCollided(spaceShip->GetWeaponAtIndex(i)->GetRect(), meteorGen->GetMeteroitAt(j)->GetRect())) {
+				meteorGen->GetMeteroitAt(j)->DecLive(spaceShip->GetDamage());
+			}
+		}
 	}
 }
