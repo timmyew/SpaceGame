@@ -10,6 +10,9 @@ Game::Game(){
 }
 
 Game::~Game(){
+	delete texManager;
+	delete sprite;
+
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -59,6 +62,10 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 		//Init Meteors
 		meteorGen = new MeteorGenerator(renderer, texManager->LoadImage(S_METEOR, renderer));
+		sprite = new Sprites();
+		sprite->SetSpriteSheet(texManager->LoadImage(S_EXPLOSION, renderer)->getTexture(), 92, 90);
+
+		meteorGen->SetExplosionSprite(sprite);
 
 		backgroundTex = texManager->LoadImage(S_BACKGROUND, renderer);
 
@@ -146,7 +153,9 @@ void Game::CheckMeteoritAndWeaponCollision(){
 	for (int i = 0; i < spaceShip->GetWeaponCount(); i++){
 		for (int j = 0; j < meteorGen->GetMeteroitCount(); j++){
 			if (Physic::isCollided(spaceShip->GetWeaponAtIndex(i)->GetRect(), meteorGen->GetMeteroitAt(j)->GetRect())) {
-				meteorGen->GetMeteroitAt(j)->DecLive(spaceShip->GetDamage());
+				meteorGen->GetMeteroitAt(j)->DecLive(spaceShip->GetDamage(), spaceShip->GetWeaponAtIndex(i)->GetRect()->y);
+				spaceShip->DeleteWeaponByIndex(i);
+				break;
 			}
 		}
 	}

@@ -18,6 +18,10 @@ MeteorGenerator::~MeteorGenerator(){
 	delete timer;
 }
 
+void MeteorGenerator::SetExplosionSprite(Sprites* sprite){
+	spriteExplosion = sprite;
+}
+
 void MeteorGenerator::SetSpawnRate(int meteorPerSecond){
 	spawnRate = meteorPerSecond;
 }
@@ -58,7 +62,7 @@ void MeteorGenerator::CreateMeteors(){
 
 		if (pastTime >= 1000) {
 			for (int i = 0; i < spawnRate; i++) {
-				tmpMeteor = new Meteroit(renderer);
+				tmpMeteor = new Meteroit(renderer, spriteExplosion);
 				tmpMeteor->SetTexture(tex);
 				tmpMeteor->GetRect()->h = rand() % maxSize + minSize;
 				tmpMeteor->GetRect()->w = tmpMeteor->GetRect()->h;

@@ -11,8 +11,8 @@ private:
     int pausedTicks;
 
     //The timer status.
-    bool paused;
-    bool started;
+    bool paused = true;
+    bool started = false;
 
 public:
     //Initializes variables.

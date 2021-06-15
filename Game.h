@@ -9,6 +9,7 @@
 #include "Fps.h"
 #include <string> 
 #include "MeteorGenerator.h"
+#include "Sprites.h"
 
 class Game {
 public:
@@ -39,6 +40,7 @@ private:
 	//Objects
 	Player* spaceShip;
 	MeteorGenerator* meteorGen;
+	Sprites* sprite;
 
 	//Utils
 	BasicObject* fpsView;

@@ -13,6 +13,7 @@ static const char* S_BACKGROUND = "./assets/Background.png";
 
 //Meteor
 static const char* S_METEOR = "./assets/meteor.png";
+static const char* S_EXPLOSION = "./assets/detonate_9x9.png";
 
 //Window Size
 static int WINDOW_WIDTH = 800;
@@ -21,7 +22,7 @@ static int WINDOW_HEIGHT = 600;
 //Live
 static const char* S_LIVE = "./assets/live.png";
 extern Texture* liveTex;
-static int const I_LIVEHEIGHT = 5;
+static int const I_LIVEHEIGHT = 3;
 
 //FPS
 static int framePerSecond = 0;

@@ -11,11 +11,14 @@ BasicObject::BasicObject(SDL_Renderer* renderer){
 	size = 12;
 
 	velo = new VeloCity();
+	animator = new Animator();
 }
 
 BasicObject::~BasicObject(){
 	SDL_DestroyTexture(texFont);
 	delete velo;
+	delete animator;
+	delete rec;
 }
 
 void BasicObject::SetAngle(int angle){
@@ -66,6 +69,10 @@ SDL_Renderer* BasicObject::GetRenderer(){
 	return renderer;
 }
 
+Animator* BasicObject::GetAnimator(){
+	return animator;
+}
+
 void BasicObject::Draw(){
 	Graphics::Draw(renderer, tex->getTexture(), rec, angle);
 }
@@ -85,6 +92,13 @@ void BasicObject::Update(){
 	rec->x += velo->GetX();
 	rec->y += velo->GetY();
 	angle += velo->GetRotate();
+
+	//Animation Movement
+	if (animator->GetRect()){
+		animator->GetRect()->x += velo->GetX();
+		animator->GetRect()->y += velo->GetY();
+		animator->SetAngle(angle);
+	}
 }
 
 void BasicObject::KeyHandler(SDL_Event* event){

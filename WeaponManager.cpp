@@ -58,3 +58,7 @@ void WeaponManager::Draw(){
 		vec_Weapon->at(i)->Draw();
 	}
 }
+
+void WeaponManager::DeleteWeaponByIndex(int index){
+	vec_Weapon->erase(vec_Weapon->begin() + index);
+}

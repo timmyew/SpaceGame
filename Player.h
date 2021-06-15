@@ -15,6 +15,8 @@ public:
 	int GetWeaponCount();
 	int GetDamage();
 
+	void DeleteWeaponByIndex(int index);
+
 	void Update() override;
 	void Draw() override;
 	void KeyHandler(SDL_Event* event);
@@ -31,7 +33,6 @@ private:
 
 	const int SPEED = 10;
 	const int LASER_DAMAGE = 20;
-	int fireRate = 2;
 	int damage = 0;
 };
 

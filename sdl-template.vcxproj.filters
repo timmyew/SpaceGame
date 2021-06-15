@@ -14,6 +14,12 @@
     <Filter Include="Physics">
       <UniqueIdentifier>{2e0ffe05-e0f8-4018-ba94-78e463d0a17a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphic">
+      <UniqueIdentifier>{762e48d7-d7e9-4f92-9305-1a74bb9f5b44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Coordinator">
+      <UniqueIdentifier>{02b4de61-a4a1-4584-9b8d-e1122901f101}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -22,20 +28,11 @@
     <ClCompile Include="Game.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="Graphics.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="TextureManager.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="BasicObject.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Animator.cpp">
-      <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Fps.cpp">
       <Filter>Utils</Filter>
@@ -46,29 +43,38 @@
     <ClCompile Include="Meteroit.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
-    <ClCompile Include="VeloCity.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="MeteorGenerator.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="LaserBeam.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
     <ClCompile Include="Physic.cpp">
       <Filter>Physics</Filter>
     </ClCompile>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="VeloCity.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Animator.cpp">
+      <Filter>Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="MeteorGenerator.cpp">
+      <Filter>Coordinator</Filter>
+    </ClCompile>
     <ClCompile Include="WeaponManager.cpp">
+      <Filter>Coordinator</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Coordinator</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprites.cpp">
+      <Filter>Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Explosion.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Graphics.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureManager.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Core</Filter>
     </ClInclude>
@@ -87,19 +93,10 @@
     <ClInclude Include="Meteroit.h">
       <Filter>Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Animator.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
     <ClInclude Include="Timer.h">
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Fps.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="VeloCity.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="MeteorGenerator.h">
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="LaserBeam.h">
@@ -108,7 +105,28 @@
     <ClInclude Include="Physic.h">
       <Filter>Physics</Filter>
     </ClInclude>
+    <ClInclude Include="Graphics.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="VeloCity.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Animator.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="MeteorGenerator.h">
+      <Filter>Coordinator</Filter>
+    </ClInclude>
     <ClInclude Include="WeaponManager.h">
+      <Filter>Coordinator</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Coordinator</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprites.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Explosion.h">
       <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>

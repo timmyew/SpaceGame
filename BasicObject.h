@@ -3,6 +3,7 @@
 #include <SDL_events.h>
 #include <SDL_ttf.h>
 #include "VeloCity.h"
+#include "Animator.h"
 
 #pragma once
 class BasicObject{
@@ -25,6 +26,7 @@ public:
 	SDL_Color* GetFontColor();
 	VeloCity* GetVeloCity();
 	SDL_Renderer* GetRenderer();
+	Animator* GetAnimator();
 
 	virtual void Draw();
 	void DrawFont(const char* text);
@@ -36,6 +38,9 @@ private:
 	SDL_Rect* rec;
 	SDL_Renderer* renderer;
 	SDL_KeyboardEvent key;
+
+	//Animator
+	Animator* animator;
 
 	//Velocity
 	VeloCity* velo;

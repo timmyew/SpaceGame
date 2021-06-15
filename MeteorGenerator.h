@@ -5,6 +5,7 @@
 #include "Timer.h"
 #include "TextureManager.h"
 #include <iostream>
+#include "Sprites.h"
 
 #pragma once
 class MeteorGenerator{
@@ -12,6 +13,7 @@ public:
 	MeteorGenerator(SDL_Renderer* renderer, Texture* tex);
 	~MeteorGenerator();
 
+	void SetExplosionSprite(Sprites* sprite);
 	void SetSpawnRate(int meteorPerSecond);
 	Meteroit* GetMeteroitAt(int index);
 	int GetMeteroitCount();
@@ -32,6 +34,8 @@ private:
 	Timer* timer;
 	SDL_Renderer* renderer;
 	Texture* tex;
+	Sprites* spriteExplosion;
+
 
 	void CreateMeteors();
 };

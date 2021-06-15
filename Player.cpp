@@ -22,7 +22,7 @@ void Player::SetLaserTexture(Texture* laserTex){
 }
 
 BasicObject* Player::GetWeaponAtIndex(int index){
-	BasicObject* obj = manager->GetWeaponAt(index);
+	BasicObject& obj = *manager->GetWeaponAt(index);
 
 	const char* a = typeid(obj).name();
 	const char* b = typeid(LaserBeam).name();
@@ -40,6 +40,10 @@ int Player::GetWeaponCount(){
 
 int Player::GetDamage(){
 	return damage;
+}
+
+void Player::DeleteWeaponByIndex(int index){
+	manager->DeleteWeaponByIndex(index);
 }
 
 void Player::Update(){

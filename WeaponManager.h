@@ -18,10 +18,12 @@ public:
 	void Update();
 	void Draw();
 
+	void DeleteWeaponByIndex(int index);
+
 private:
 	std::vector<BasicObject*>* vec_Weapon;
 	Timer* timer;
 
-	const int shotIntervall = 200;
+	const int shotIntervall = 100;
 };
 

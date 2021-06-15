@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include "Game.h"
 #include "Global_Const.h"
+#include <vld.h>
 
 int main(int argc, char* args[]) {
     
